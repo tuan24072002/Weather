@@ -14,11 +14,11 @@ const Weather = () => {
             const data = await response.json();
             if (!response.ok) {
                 toast.dismiss();
-                return toast.error(`Lỗi ${data.cod}: ${data.message}`);
+                return toast.error(`${lang === "vi" ? "Lỗi" : "Error"} ${data.cod}: ${data.message}`);
             }
             if (data.cod !== 200 && data.cod !== "200") {
                 toast.dismiss();
-                return toast.error(`Lỗi ${data.cod}: ${data.message}`);
+                return toast.error(`${lang === "vi" ? "Lỗi" : "Error"} ${data.cod}: ${data.message}`);
             }
 
             setWeatherData({
